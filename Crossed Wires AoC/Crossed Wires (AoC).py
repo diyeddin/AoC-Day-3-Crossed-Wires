@@ -48,7 +48,7 @@ def closest_intersection(path_1, path_2, inter):
                     res2 = 1
                 elif j[1] == path_2[path_2.index(j)+1][1]:
                     res2 = 0
-                # To see whether the two lines intersect they shouldn't be parrallel so I'm ignoring the lines that have the same axis values that are staying the same
+                # To see whether the two lines intersect they shouldn't be parrallel so I'm ignoring the lines with the same axis staying the same
                 if res1 == res2:
                     continue
                 else:
