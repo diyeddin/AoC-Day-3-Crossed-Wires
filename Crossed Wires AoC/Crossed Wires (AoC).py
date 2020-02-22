@@ -58,9 +58,9 @@ def closest_intersection(path_1, path_2, inter):
                             if i[0] >= min((j[0], path_2[path_2.index(j)+1][0])) and i[0] <= max((j[0], path_2[path_2.index(j)+1][0])) and j[1] >= min((i[1], path_1[path_1.index(i)+1][1])) and j[1] <= max((i[1], path_1[path_1.index(i)+1][1])):
                                 # this calculates the distance from the nearest intersection to the start point
                                 if inter == 0:
-                                    inter = sum((fabs(i[0]), fabs(j[1])))
+                                    inter = int(sum((fabs(i[0]), fabs(j[1]))))
                                 elif sum((fabs(i[0]), fabs(j[1]))) < inter:
-                                    inter = sum((fabs(i[0]), fabs(j[1])))
+                                    inter = int(sum((fabs(i[0]), fabs(j[1]))))
                         # this is the same as above but this works if the first lines' y value is fixed   
                         elif res1 == 0:
                             if i[1] >= min((j[1], path_2[path_2.index(j)+1][1])) and i[1] <= max((j[1], path_2[path_2.index(j)+1][1])) and j[0] >= min((i[0], path_1[path_1.index(i)+1][0])) and j[0] <= max((i[0], path_1[path_1.index(i)+1][0])):
