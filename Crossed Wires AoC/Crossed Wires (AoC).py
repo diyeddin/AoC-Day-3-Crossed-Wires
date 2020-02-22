@@ -2,7 +2,7 @@ from math import fabs
 
 def path_finder(wire):
     '''
-    This function finds the wires path from the given commands
+    This function finds the wires' path from the given commands
     and returns it in (x, y) format
     '''
     x, y = 0, 0
@@ -61,7 +61,7 @@ def closest_intersection(path_1, path_2, inter):
                                     inter = sum((fabs(i[0]), fabs(j[1])))
                                 elif sum((fabs(i[0]), fabs(j[1]))) < inter:
                                     inter = sum((fabs(i[0]), fabs(j[1])))
-                        # this is the same as above but this works if the first line's y value is fixed   
+                        # this is the same as above but this works if the first lines' y value is fixed   
                         elif res1 == 0:
                             if i[1] >= min((j[1], path_2[path_2.index(j)+1][1])) and i[1] <= max((j[1], path_2[path_2.index(j)+1][1])) and j[0] >= min((i[0], path_1[path_1.index(i)+1][0])) and j[0] <= max((i[0], path_1[path_1.index(i)+1][0])):
                                 if inter == 0:
