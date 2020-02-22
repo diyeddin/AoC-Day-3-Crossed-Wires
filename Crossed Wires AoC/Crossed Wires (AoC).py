@@ -81,8 +81,7 @@ wires_file = open('Crossed Wires.txt', 'r')
 wire_1 = wires_file.readline().split(',')
 wire_2 = wires_file.readline().split(',')
 
-res1 = 0
-res2 = 0
+res1 = res2 = 0
 inter = 0
 
 print(closest_intersection(path_finder(wire_1), path_finder(wire_2), inter))
