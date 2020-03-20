@@ -50,13 +50,13 @@ def closest_intersection(path_1, path_2):
                 if (path_1[i] and path_2[j]) != (0, 0):
                     if res1:
                         # this compares the fixed value from the first line with the moving value from the second line 
-                        if path_1[i][0] >= min(path_2[j][0], path_2[j+1][0]) and path_1[i][0] <= max(path_2[j][0], path_2[j+1][0]) and path_2[j][1] >= min(path_1[i][1], path_1[i+1][1]) and path_2[j][1] <= max(path_1[i][1], path_1[i+1][1]):
+                        if min(path_2[j][0], path_2[j+1][0]) <= path_1[i][0] <= max(path_2[j][0], path_2[j+1][0]) and min(path_1[i][1], path_1[i+1][1]) <= path_2[j][1] <= max(path_1[i][1], path_1[i+1][1]):
                             # this calculates the distance from the nearest intersection to the start point
                             if inter == 0 or sum((abs(path_1[i][0]), abs(path_2[j][1]))) < inter:
-                                inter = sum((path_1[i][0], path_2[j][1]))
+                                inter = sum((abs(path_1[i][0]), abs(path_2[j][1])))
                     # this is the same as above but this works if the first lines' y value is fixed   
                     else:
-                        if path_1[i][1] >= min(path_2[j][1], path_2[j+1][1]) and path_1[i][1] <= max(path_2[j][1], path_2[j+1][1]) and path_2[j][0] >= min(path_1[i][0], path_1[i+1][0]) and path_2[j][0] <= max(path_1[i][0], path_1[i+1][0]):
+                        if min(path_2[j][1], path_2[j+1][1]) <= path_1[i][1] <= max(path_2[j][1], path_2[j+1][1]) and min(path_1[i][0], path_1[i+1][0]) <= path_2[j][0] <= max(path_1[i][0], path_1[i+1][0]):
                             if inter == 0 or sum((abs(path_2[j][0]), abs(path_1[i][1]))) < inter:
                                 inter = sum((abs(path_2[j][0]), abs(path_1[i][1])))
   
